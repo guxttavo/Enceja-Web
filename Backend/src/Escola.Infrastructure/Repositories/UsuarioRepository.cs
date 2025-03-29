@@ -12,9 +12,9 @@ namespace Escola.Infrastructure.Repositories
         {
         }
 
-        public async Task<Usuario> GetByCpfAsync(string cpf)
-        {
-            return await _context.Usuarios.FirstOrDefaultAsync(usuario => usuario.Cpf == cpf);
-        }
+        //public async Task<Usuario> GetByCpfAsync(string cpf)
+        //{
+        //    return await _context.Usuarios.FirstOrDefaultAsync(usuario => usuario.Cpf == cpf);
+        //}
     }
 }

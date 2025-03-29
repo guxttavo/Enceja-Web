@@ -1,0 +1,45 @@
+﻿networks:
+  container-network:
+    driver: bridge
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: container-api-dotnet
+    ports:
+      - "8080:44389"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings__DefaultConnection: "Host=postgres;Port=5432;Database=DbProject;Username=postgres;Password=123"
+    depends_on:
+      - postgres
+    networks:
+      - container-network
+    restart: always
+
+  postgres:
+    image: postgres:latest
+    container_name: container-postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: DbProject
+    ports:
+      - "5433:5432"
+    networks:
+      - container-network
+    restart: always
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: container-pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: 123
+    ports:
+      - "5434:80"
+    networks:
+      - container-network
+    restart: always

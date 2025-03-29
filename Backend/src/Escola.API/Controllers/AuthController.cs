@@ -21,12 +21,12 @@ namespace Escola.API.Controllers
             _usuarioService = usuarioService;
         }
 
-        [HttpPost("login")]
-        public async Task<IActionResult> Login([FromBody] LoginDTO login)
-        {
-            var usuarioCpf = await _usuarioService.GetByCpfAsync(login.Cpf);
-            var hashedPassword = new PasswordHasher<Usuario>()
-                .HashPassword(  , login.PasswordHash);
+        //[HttpPost("login")]
+        //public async Task<IActionResult> Login([FromBody] LoginDTO login)
+        //{
+        //    var usuarioCpf = await _usuarioService.GetByCpfAsync(login.Cpf);
+        //    var hashedPassword = new PasswordHasher<Usuario>()
+        //        .HashPassword(  , login.PasswordHash);
             //var usuario = await _usuarioService.BuscarUsuarioPorEmailAsync(model.Email);
 
             //if (usuario == null || usuario.Senha != model.Senha)
@@ -35,7 +35,7 @@ namespace Escola.API.Controllers
             //var token = _tokenService.Generate(usuario);
 
             //return Ok(new { token, usuario = new { usuario.Id, usuario.Nome } });
-            return null;
-        }
+        //    return null;
+        //}
     }
 }
