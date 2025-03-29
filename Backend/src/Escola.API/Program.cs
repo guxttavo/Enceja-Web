@@ -56,6 +56,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Escola.API v1"));
 }
 
+app.UseDeveloperExceptionPage();
 app.UseHttpsRedirection();
 app.UseRouting();
 app.UseAuthorization();

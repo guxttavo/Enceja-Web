@@ -1,23 +1,11 @@
-﻿networks:
-  container-network:
-    driver: bridge
-
 services:
-  api:
+  escola.api:
+    image: ${DOCKER_REGISTRY-}escolaapi
     build:
       context: .
-      dockerfile: Dockerfile
-    container_name: container-api-dotnet
-    ports:
-      - "8080:44389"
-    environment:
-      ASPNETCORE_ENVIRONMENT: Development
-      ConnectionStrings__DefaultConnection: "Host=postgres;Port=5432;Database=DbProject;Username=postgres;Password=123"
-    depends_on:
-      - postgres
+      dockerfile: src/Escola.API/Dockerfile
     networks:
       - container-network
-    restart: always
 
   postgres:
     image: postgres:latest
@@ -43,3 +31,7 @@ services:
     networks:
       - container-network
     restart: always
+
+networks:
+  container-network:
+    driver: bridge
