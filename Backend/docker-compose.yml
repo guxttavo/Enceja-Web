@@ -1,5 +1,6 @@
 services:
   escola.api:
+    container_name: API
     image: ${DOCKER_REGISTRY-}escolaapi
     build:
       context: .

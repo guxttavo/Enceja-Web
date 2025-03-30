@@ -7,26 +7,28 @@ WORKDIR /app
 EXPOSE 8080
 EXPOSE 8081
 
-
 # This stage is used to build the service project
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
-WORKDIR /src
-COPY ["src/Escola.API/Escola.API.csproj", "src/Escola.API/"]
-COPY ["src/Escola.Domain/Escola.Domain.csproj", "src/Escola.Domain/"]
-COPY ["src/Escola.Infrastructure/Escola.Infrastructure.csproj", "src/Escola.Infrastructure/"]
-RUN dotnet restore "./src/Escola.API/Escola.API.csproj"
+#WORKDIR /src
+COPY ["Escola.API/Escola.API.csproj", "src/Escola.API/"]
+COPY ["Escola.Domain/Escola.Domain.csproj", "src/Escola.Domain/"]
+COPY ["Escola.Infrastructure/Escola.Infrastructure.csproj", "src/Escola.Infrastructure/"]
+
+RUN dotnet restore "./Escola.API/Escola.API.csproj"
+
 COPY . .
-WORKDIR "/src/src/Escola.API"
+
+WORKDIR "/Escola.API"
+
 RUN dotnet build "./Escola.API.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
-# This stage is used to publish the service project to be copied to the final stage
-FROM build AS publish
-ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "./Escola.API.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
-
-# This stage is used in production or when running from VS in regular mode (Default when not using the Debug configuration)
-FROM base AS final
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS final
 WORKDIR /app
-COPY --from=publish /app/publish .
+COPY --from=build /app/build .
+
+# Instala a ferramenta Entity Framework no container
+RUN dotnet tool install --global dotnet-ef
+ENV PATH="${PATH}:/root/.dotnet/tools"
+
 ENTRYPOINT ["dotnet", "Escola.API.dll"]
