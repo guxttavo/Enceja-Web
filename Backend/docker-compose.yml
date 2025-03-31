@@ -4,7 +4,7 @@ services:
     image: ${DOCKER_REGISTRY-}escolaapi
     build:
       context: .
-      dockerfile: src/Escola.API/Dockerfile
+      dockerfile: Escola.API/Dockerfile
     networks:
       - container-network
 
