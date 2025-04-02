@@ -1,4 +1,4 @@
-﻿namespace Escola.Domain.DTO
+﻿namespace Escola.Appplication.DTOs
 {
     public class LoginDTO
     {

@@ -1,38 +1,14 @@
+networks:
+  container-network:
+    driver: bridge
+
 services:
   escola.api:
-    container_name: API
     image: ${DOCKER_REGISTRY-}escolaapi
     build:
       context: .
       dockerfile: Escola.API/Dockerfile
     networks:
       - container-network
-
-  postgres:
-    image: postgres:latest
-    container_name: container-postgres
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: 123
-      POSTGRES_DB: DbProject
-    ports:
-      - "5433:5432"
-    networks:
-      - container-network
-    restart: always
-
-  pgadmin:
-    image: dpage/pgadmin4
-    container_name: container-pgadmin
-    environment:
-      PGADMIN_DEFAULT_EMAIL: admin@admin.com
-      PGADMIN_DEFAULT_PASSWORD: 123
-    ports:
-      - "5434:80"
-    networks:
-      - container-network
-    restart: always
-
-networks:
-  container-network:
-    driver: bridge
+    volumes:
+      - ./data:/app/data

@@ -37,7 +37,6 @@ namespace Escola.Infrastructure
             .HasOne(pd => pd.Disciplina)
             .WithMany(d => d.Professores_Disciplinas)
             .HasForeignKey(pd => pd.IdDisciplina);
-
         }
     }
 }
