@@ -29,8 +29,4 @@
 		<ProjectReference Include="..\Escola.Domain\Enceja.Domain.csproj" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <Folder Include="Migrations\" />
-	</ItemGroup>
-
 </Project>

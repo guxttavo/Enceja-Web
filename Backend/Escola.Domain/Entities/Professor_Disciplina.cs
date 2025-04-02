@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Enceja.Application.Entities
+namespace Enceja.Domain.Entities
 {
     [Table("professor_disciplina")]
     public class Professor_Disciplina

@@ -1,5 +1,5 @@
-﻿using Enceja.Application.Interfaces;
-using Enceja.Application.Entities;
+﻿using Enceja.Domain.Interfaces;
+using Enceja.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;

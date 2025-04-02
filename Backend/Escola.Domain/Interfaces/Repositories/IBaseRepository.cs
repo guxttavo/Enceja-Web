@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace Enceja.Application.Interfaces.Repositories
+namespace Enceja.Domain.Interfaces.Repositories
 {
     public interface IBaseRepository<T> where T : class
     {

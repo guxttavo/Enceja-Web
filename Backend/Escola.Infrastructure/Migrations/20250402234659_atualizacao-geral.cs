@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Enceja.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class teste : Migration
+    public partial class atualizacaogeral : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

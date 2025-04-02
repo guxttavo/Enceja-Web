@@ -1,5 +1,5 @@
-﻿using Enceja.Application.Entities;
-using Enceja.Application.Interfaces.Repositories;
+﻿using Enceja.Domain.Entities;
+using Enceja.Domain.Interfaces.Repositories;
 
 namespace Enceja.Infrastructure.Repositories
 {

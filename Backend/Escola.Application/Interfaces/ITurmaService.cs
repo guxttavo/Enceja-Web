@@ -1,6 +1,6 @@
-﻿using Enceja.Application.Entities;
+﻿using Enceja.Domain.Entities;
 
-namespace Enceja.Application.Interfaces
+namespace Enceja.Domain.Interfaces
 {
     public interface ITurmaService : IBaseService<Turma>
     {

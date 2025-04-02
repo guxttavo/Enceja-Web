@@ -1,8 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Enceja.Application.Entities;
+using Enceja.Domain.Entities;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using System;
+using Enceja.Domain.Entities;
 
 namespace Enceja.Infrastructure
 {

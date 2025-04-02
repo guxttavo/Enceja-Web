@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Enceja.Application.Entities
+namespace Enceja.Domain.Entities
 {
     [Table("nota")]
     public class Nota

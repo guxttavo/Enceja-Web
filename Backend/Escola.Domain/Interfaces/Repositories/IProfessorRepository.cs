@@ -1,6 +1,6 @@
-﻿using Enceja.Application.Entities;
+﻿using Enceja.Domain.Entities;
 
-namespace Enceja.Application.Interfaces.Repositories
+namespace Enceja.Domain.Interfaces.Repositories
 {
     public interface IProfessorRepository : IBaseRepository<Professor>
     {

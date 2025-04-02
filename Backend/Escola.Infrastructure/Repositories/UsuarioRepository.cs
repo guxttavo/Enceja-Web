@@ -1,5 +1,5 @@
-﻿using Enceja.Application.Entities;
-using Enceja.Application.Interfaces.Repositories;
+﻿using Enceja.Domain.Interfaces.Repositories;
+using Enceja.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Threading.Tasks;

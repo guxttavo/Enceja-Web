@@ -1,15 +1,15 @@
 using Enceja.Infrastructure;
-using Enceja.Application.Interfaces.Repositories;
+using Enceja.Domain.Interfaces.Repositories;
 using Enceja.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
-using Enceja.Application.Services;
+using Enceja.Domain.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
-using Enceja.Application.Entities;
-using Enceja.Application.Interfaces;
+using Enceja.Domain.Interfaces;
+using Enceja.Domain.Entities;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
@@ -36,7 +36,7 @@ builder.Services.AddScoped<IDisciplinaService, DisciplinaService>();
 builder.Services.AddScoped<INotaService, NotaService>();
 builder.Services.AddScoped<IProfessorService, ProfessorService>();
 builder.Services.AddScoped<IUsuarioService, UsuarioService>();
-//builder.Services.AddSingleton<TokenService>();
+builder.Services.AddSingleton<TokenService>();
 
 builder.Services.AddControllers();
 

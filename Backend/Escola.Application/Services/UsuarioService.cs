@@ -1,10 +1,10 @@
-﻿using Enceja.Application.Services;
-using Enceja.Application.Entities;
-using Enceja.Application.Interfaces.Repositories;
-using Enceja.Application.Interfaces;
+﻿using Enceja.Domain.Services;
+using Enceja.Domain.Interfaces.Repositories;
+using Enceja.Domain.Interfaces;
+using Enceja.Domain.Entities;
 
 
-namespace Enceja.Application.Services
+namespace Enceja.Domain.Services
 {
     public class UsuarioService : BaseService<Usuario>, IUsuarioService
     {

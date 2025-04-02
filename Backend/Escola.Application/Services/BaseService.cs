@@ -1,11 +1,11 @@
-﻿using Enceja.Application.Interfaces;
-using Enceja.Application.Interfaces.Repositories;
+﻿using Enceja.Domain.Interfaces;
+using Enceja.Domain.Interfaces.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace Enceja.Application.Services
+namespace Enceja.Domain.Services
 {
     public class BaseService<T> : IBaseService<T> where T : class
     {

@@ -17,7 +17,7 @@ namespace Enceja.Infrastructure.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.0");
 
-            modelBuilder.Entity("Escola.Domain.Entities.Disciplina", b =>
+            modelBuilder.Entity("Enceja.Domain.Entities.Disciplina", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -33,7 +33,7 @@ namespace Enceja.Infrastructure.Migrations
                     b.ToTable("disciplina");
                 });
 
-            modelBuilder.Entity("Escola.Domain.Entities.Nota", b =>
+            modelBuilder.Entity("Enceja.Domain.Entities.Nota", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -67,7 +67,7 @@ namespace Enceja.Infrastructure.Migrations
                     b.ToTable("nota");
                 });
 
-            modelBuilder.Entity("Escola.Domain.Entities.Professor_Disciplina", b =>
+            modelBuilder.Entity("Enceja.Domain.Entities.Professor_Disciplina", b =>
                 {
                     b.Property<Guid>("IdProfessor")
                         .HasColumnType("TEXT")
@@ -84,7 +84,7 @@ namespace Enceja.Infrastructure.Migrations
                     b.ToTable("professor_disciplina");
                 });
 
-            modelBuilder.Entity("Escola.Domain.Entities.Turma", b =>
+            modelBuilder.Entity("Enceja.Domain.Entities.Turma", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -100,7 +100,7 @@ namespace Enceja.Infrastructure.Migrations
                     b.ToTable("turma");
                 });
 
-            modelBuilder.Entity("Escola.Domain.Entities.Usuario", b =>
+            modelBuilder.Entity("Enceja.Domain.Entities.Usuario", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -309,9 +309,9 @@ namespace Enceja.Infrastructure.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("Escola.Domain.Entities.Aluno", b =>
+            modelBuilder.Entity("Enceja.Domain.Entities.Aluno", b =>
                 {
-                    b.HasBaseType("Escola.Domain.Entities.Usuario");
+                    b.HasBaseType("Enceja.Domain.Entities.Usuario");
 
                     b.Property<Guid>("IdTurma")
                         .HasColumnType("TEXT")
@@ -326,28 +326,28 @@ namespace Enceja.Infrastructure.Migrations
                     b.ToTable("aluno");
                 });
 
-            modelBuilder.Entity("Escola.Domain.Entities.Professor", b =>
+            modelBuilder.Entity("Enceja.Domain.Entities.Professor", b =>
                 {
-                    b.HasBaseType("Escola.Domain.Entities.Usuario");
+                    b.HasBaseType("Enceja.Domain.Entities.Usuario");
 
                     b.ToTable("professor");
                 });
 
-            modelBuilder.Entity("Escola.Domain.Entities.Nota", b =>
+            modelBuilder.Entity("Enceja.Domain.Entities.Nota", b =>
                 {
-                    b.HasOne("Escola.Domain.Entities.Aluno", "Aluno")
+                    b.HasOne("Enceja.Domain.Entities.Aluno", "Aluno")
                         .WithMany("Notas")
                         .HasForeignKey("IdAluno")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Escola.Domain.Entities.Disciplina", "Disciplina")
+                    b.HasOne("Enceja.Domain.Entities.Disciplina", "Disciplina")
                         .WithMany()
                         .HasForeignKey("IdDisciplina")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Escola.Domain.Entities.Professor", "Professor")
+                    b.HasOne("Enceja.Domain.Entities.Professor", "Professor")
                         .WithMany()
                         .HasForeignKey("IdProfessor")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -360,15 +360,15 @@ namespace Enceja.Infrastructure.Migrations
                     b.Navigation("Professor");
                 });
 
-            modelBuilder.Entity("Escola.Domain.Entities.Professor_Disciplina", b =>
+            modelBuilder.Entity("Enceja.Domain.Entities.Professor_Disciplina", b =>
                 {
-                    b.HasOne("Escola.Domain.Entities.Disciplina", "Disciplina")
+                    b.HasOne("Enceja.Domain.Entities.Disciplina", "Disciplina")
                         .WithMany("Professores_Disciplinas")
                         .HasForeignKey("IdDisciplina")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Escola.Domain.Entities.Professor", "Professor")
+                    b.HasOne("Enceja.Domain.Entities.Professor", "Professor")
                         .WithMany("Professores_Disciplinas")
                         .HasForeignKey("IdProfessor")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -390,7 +390,7 @@ namespace Enceja.Infrastructure.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<System.Guid>", b =>
                 {
-                    b.HasOne("Escola.Domain.Entities.Usuario", null)
+                    b.HasOne("Enceja.Domain.Entities.Usuario", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -399,7 +399,7 @@ namespace Enceja.Infrastructure.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<System.Guid>", b =>
                 {
-                    b.HasOne("Escola.Domain.Entities.Usuario", null)
+                    b.HasOne("Enceja.Domain.Entities.Usuario", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -414,7 +414,7 @@ namespace Enceja.Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Escola.Domain.Entities.Usuario", null)
+                    b.HasOne("Enceja.Domain.Entities.Usuario", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -423,22 +423,22 @@ namespace Enceja.Infrastructure.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<System.Guid>", b =>
                 {
-                    b.HasOne("Escola.Domain.Entities.Usuario", null)
+                    b.HasOne("Enceja.Domain.Entities.Usuario", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Escola.Domain.Entities.Aluno", b =>
+            modelBuilder.Entity("Enceja.Domain.Entities.Aluno", b =>
                 {
-                    b.HasOne("Escola.Domain.Entities.Usuario", null)
+                    b.HasOne("Enceja.Domain.Entities.Usuario", null)
                         .WithOne()
-                        .HasForeignKey("Escola.Domain.Entities.Aluno", "Id")
+                        .HasForeignKey("Enceja.Domain.Entities.Aluno", "Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Escola.Domain.Entities.Turma", "Turma")
+                    b.HasOne("Enceja.Domain.Entities.Turma", "Turma")
                         .WithMany("Alunos")
                         .HasForeignKey("IdTurma")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -447,31 +447,31 @@ namespace Enceja.Infrastructure.Migrations
                     b.Navigation("Turma");
                 });
 
-            modelBuilder.Entity("Escola.Domain.Entities.Professor", b =>
+            modelBuilder.Entity("Enceja.Domain.Entities.Professor", b =>
                 {
-                    b.HasOne("Escola.Domain.Entities.Usuario", null)
+                    b.HasOne("Enceja.Domain.Entities.Usuario", null)
                         .WithOne()
-                        .HasForeignKey("Escola.Domain.Entities.Professor", "Id")
+                        .HasForeignKey("Enceja.Domain.Entities.Professor", "Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Escola.Domain.Entities.Disciplina", b =>
+            modelBuilder.Entity("Enceja.Domain.Entities.Disciplina", b =>
                 {
                     b.Navigation("Professores_Disciplinas");
                 });
 
-            modelBuilder.Entity("Escola.Domain.Entities.Turma", b =>
+            modelBuilder.Entity("Enceja.Domain.Entities.Turma", b =>
                 {
                     b.Navigation("Alunos");
                 });
 
-            modelBuilder.Entity("Escola.Domain.Entities.Aluno", b =>
+            modelBuilder.Entity("Enceja.Domain.Entities.Aluno", b =>
                 {
                     b.Navigation("Notas");
                 });
 
-            modelBuilder.Entity("Escola.Domain.Entities.Professor", b =>
+            modelBuilder.Entity("Enceja.Domain.Entities.Professor", b =>
                 {
                     b.Navigation("Professores_Disciplinas");
                 });

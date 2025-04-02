@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Enceja.Application.Entities;
+using Enceja.Domain.Entities;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Enceja.Application.Interfaces;
+using Enceja.Domain.Interfaces;
 
 namespace Enceja.API.Controllers
 {

@@ -1,4 +1,4 @@
-﻿using Enceja.Application.Interfaces.Repositories;
+﻿using Enceja.Domain.Interfaces.Repositories;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;

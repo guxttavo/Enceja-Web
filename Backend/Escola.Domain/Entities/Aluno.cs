@@ -1,8 +1,9 @@
-﻿using System;
+﻿using Enceja.Domain.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Enceja.Application.Entities
+namespace Enceja.Domain.Entities
 {
     [Table("aluno")]
     public class Aluno : Usuario

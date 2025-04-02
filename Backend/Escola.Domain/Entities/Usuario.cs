@@ -2,7 +2,7 @@
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Enceja.Application.Entities
+namespace Enceja.Domain.Entities
 {
     [Table("usuario")]
     public class Usuario : IdentityUser<Guid>
