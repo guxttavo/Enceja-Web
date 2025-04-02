@@ -1,4 +1,4 @@
-﻿namespace Escola.Appplication.DTOs
+﻿namespace Enceja.Appplication.DTOs
 {
     public class LoginDTO
     {

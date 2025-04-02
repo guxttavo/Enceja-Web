@@ -1,7 +1,7 @@
-﻿using Escola.Domain.Entities;
-using Escola.Domain.Interfaces.Repositories;
+﻿using Enceja.Application.Entities;
+using Enceja.Application.Interfaces.Repositories;
 
-namespace Escola.Infrastructure.Repositories
+namespace Enceja.Infrastructure.Repositories
 {
     public class AlunoRepository : BaseRepository<Aluno>, IAlunoRepository
     {

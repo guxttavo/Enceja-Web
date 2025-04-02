@@ -1,4 +1,4 @@
-﻿using Escola.Domain.Interfaces.Repositories;
+﻿using Enceja.Application.Interfaces.Repositories;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace Escola.Infrastructure.Repositories
+namespace Enceja.Infrastructure.Repositories
 {
     public class BaseRepository<T> : IBaseRepository<T> where T : class
     {

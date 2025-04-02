@@ -1,10 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Escola.Domain.Entities;
+using Enceja.Application.Entities;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using System;
 
-namespace Escola.Infrastructure
+namespace Enceja.Infrastructure
 {
     public class ApplicationDbContext : IdentityDbContext<Usuario, IdentityRole<Guid>, Guid>
     {

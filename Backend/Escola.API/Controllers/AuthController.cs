@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace Escola.API.Controllers
+namespace Enceja.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

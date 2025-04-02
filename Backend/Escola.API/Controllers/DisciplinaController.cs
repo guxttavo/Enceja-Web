@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Escola.Domain.Entities;
-using Escola.Domain.Interfaces.Services;
+using Enceja.Application.Entities;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Enceja.Application.Interfaces;
 
-namespace Escola.API.Controllers
+namespace Enceja.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

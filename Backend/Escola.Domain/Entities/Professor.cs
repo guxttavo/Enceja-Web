@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
-namespace Escola.Domain.Entities
+namespace Enceja.Application.Entities
 {
     [Table("professor")]
     public class Professor : Usuario

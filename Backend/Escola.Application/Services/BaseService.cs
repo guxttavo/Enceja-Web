@@ -1,11 +1,11 @@
-﻿using Escola.Domain.Interfaces.Repositories;
-using Escola.Domain.Interfaces.Services;
+﻿using Enceja.Application.Interfaces;
+using Enceja.Application.Interfaces.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace Escola.Application.Services
+namespace Enceja.Application.Services
 {
     public class BaseService<T> : IBaseService<T> where T : class
     {

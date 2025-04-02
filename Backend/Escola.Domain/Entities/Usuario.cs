@@ -2,7 +2,7 @@
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Escola.Domain.Entities
+namespace Enceja.Application.Entities
 {
     [Table("usuario")]
     public class Usuario : IdentityUser<Guid>

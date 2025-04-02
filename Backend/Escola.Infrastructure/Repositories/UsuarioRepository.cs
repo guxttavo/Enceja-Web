@@ -1,10 +1,10 @@
-﻿using Escola.Domain.Entities;
-using Escola.Domain.Interfaces.Repositories;
+﻿using Enceja.Application.Entities;
+using Enceja.Application.Interfaces.Repositories;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Escola.Infrastructure.Repositories
+namespace Enceja.Infrastructure.Repositories
 {
     public class UsuarioRepository : BaseRepository<Usuario>, IUsuarioRepository
     {

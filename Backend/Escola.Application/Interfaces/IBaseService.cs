@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Escola.Domain.Interfaces.Services
+namespace Enceja.Application.Interfaces
 {
     public interface IBaseService<T> where T : class
     {

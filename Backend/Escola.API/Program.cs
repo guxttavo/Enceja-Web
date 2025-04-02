@@ -1,16 +1,15 @@
-using Escola.Infrastructure;
-using Escola.Domain.Interfaces.Repositories;
-using Escola.Domain.Interfaces.Services;
-using Escola.Infrastructure.Repositories;
+using Enceja.Infrastructure;
+using Enceja.Application.Interfaces.Repositories;
+using Enceja.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
-using Escola.Application.Services;
-using Escola.Domain.Services;
+using Enceja.Application.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
-using Escola.Domain.Entities;
+using Enceja.Application.Entities;
+using Enceja.Application.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");

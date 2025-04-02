@@ -1,9 +1,9 @@
-﻿using Escola.Application.Services;
-using Escola.Domain.Entities;
-using Escola.Domain.Interfaces.Repositories;
-using Escola.Domain.Interfaces.Services;
+﻿using Enceja.Application.Services;
+using Enceja.Application.Entities;
+using Enceja.Application.Interfaces.Repositories;
+using Enceja.Application.Interfaces;
 
-namespace Escola.Domain.Services
+namespace Enceja.Application.Services
 {
     public class ProfessorService : BaseService<Professor>, IProfessorService
     {

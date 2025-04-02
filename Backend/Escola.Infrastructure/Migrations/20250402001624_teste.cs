@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Escola.Infrastructure.Migrations
+namespace Enceja.Infrastructure.Migrations
 {
     /// <inheritdoc />
     public partial class teste : Migration

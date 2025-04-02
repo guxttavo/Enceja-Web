@@ -1,6 +1,6 @@
-﻿using Escola.Domain.Entities;
+﻿using Enceja.Application.Entities;
 
-namespace Escola.Domain.Interfaces.Services
+namespace Enceja.Application.Interfaces
 {
     public interface IDisciplinaService : IBaseService<Disciplina>
     {
