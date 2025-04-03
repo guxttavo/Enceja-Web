@@ -38,7 +38,7 @@ namespace Enceja.API.Controllers
             return Ok(usuario);
         }
 
-        [HttpPost]
+        [HttpPost("Cadastrar")]
         public async Task<ActionResult> Post([FromBody] Usuario usuario)
         {
             if (usuario == null)

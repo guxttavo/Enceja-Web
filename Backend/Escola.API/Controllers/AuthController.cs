@@ -19,12 +19,12 @@ namespace Enceja.API.Controllers
             _usuarioService = usuarioService;
         }
 
-        [HttpPost("login")]
+        [HttpPost("Login")]
         public async Task<IActionResult> Login([FromBody] LoginDTO request)
         {
             var usuario = await _usuarioService.GetByEmailAsync(request.Email);
 
-            if (usuario == null || usuario.Senha != request.PasswordHash)
+            if (usuario.Email != request.Email && usuario.Senha != usuario.Senha)
             {
                 return Unauthorized(new { Message = "Usuário ou senha inválidos" });
             }
