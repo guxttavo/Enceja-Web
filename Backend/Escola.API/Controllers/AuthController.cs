@@ -1,6 +1,8 @@
 ﻿using Enceja.Domain.Services;
 using Enceja.Appplication.DTOs;
+using Enceja.Domain.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace Enceja.API.Controllers
 {
@@ -9,22 +11,26 @@ namespace Enceja.API.Controllers
     public class AuthController : ControllerBase
     {
         private readonly TokenService _tokenService;
+        private readonly IUsuarioService _usuarioService;
 
-        public AuthController(TokenService tokenService)
+        public AuthController(TokenService tokenService, IUsuarioService usuarioService)
         {
             _tokenService = tokenService;
+            _usuarioService = usuarioService;
         }
 
         [HttpPost("login")]
-        public IActionResult Login([FromBody] LoginDTO request)
+        public async Task<IActionResult> Login([FromBody] LoginDTO request)
         {
-            if (request.Email == "admin" && request.PasswordHash == "1234")
+            var usuario = await _usuarioService.GetByEmailAsync(request.Email);
+
+            if (usuario == null || usuario.Senha != request.PasswordHash)
             {
-                var token = _tokenService.GenerateToken(request.Email, "Admin");
-                return Ok(new { Token = token });
+                return Unauthorized(new { Message = "Usuário ou senha inválidos" });
             }
 
-            return Unauthorized(new { Message = "Usuário ou senha inválidos" });
+            var token = _tokenService.GenerateToken(usuario.Email, "User");
+            return Ok(new { Token = token });
         }
     }
 }

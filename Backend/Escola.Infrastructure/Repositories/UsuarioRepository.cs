@@ -1,7 +1,6 @@
 ﻿using Enceja.Domain.Interfaces.Repositories;
 using Enceja.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Enceja.Infrastructure.Repositories
@@ -12,9 +11,9 @@ namespace Enceja.Infrastructure.Repositories
         {
         }
 
-        //public async Task<Usuario> GetByCpfAsync(string cpf)
-        //{
-        //    return await _context.Usuarios.FirstOrDefaultAsync(usuario => usuario.Cpf == cpf);
-        //}
+        public async Task<Usuario> GetByEmailAsync(string email)
+        {
+            return await _context.Usuarios.FirstOrDefaultAsync(u => u.Email == email);
+        }
     }
 }

@@ -7,10 +7,10 @@ namespace Enceja.Domain.Entities
     public class Professor_Disciplina
     {
         [Column("id_professor")]
-        public Guid IdProfessor { get; set; }
+        public int IdProfessor { get; set; }
 
         [Column("id_disciplina")]
-        public Guid IdDisciplina { get; set; }
+        public int IdDisciplina { get; set; }
 
         [ForeignKey(nameof(IdProfessor))]
         public Professor Professor { get; set; }

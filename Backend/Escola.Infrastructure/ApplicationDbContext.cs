@@ -7,7 +7,7 @@ using Enceja.Domain.Entities;
 
 namespace Enceja.Infrastructure
 {
-    public class ApplicationDbContext : IdentityDbContext<Usuario, IdentityRole<Guid>, Guid>
+    public class ApplicationDbContext : DbContext
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
            : base(options)

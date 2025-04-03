@@ -5,27 +5,20 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Enceja.Domain.Entities
 {
     [Table("usuario")]
-    public class Usuario : IdentityUser<Guid>
+    public class Usuario
     {
-        [Column("nome")]
-        public override string UserName { get; set; }
+        public int Id { get; set; }
 
-        [Column("email")]
-        public override string Email { get; set; }
+        public string Email { get; set; }
 
-        [Column("cpf")]
         public string Cpf { get; set; }
 
-        [Column("senha")]
-        public override string PasswordHash { get; set; }
+        public string Senha { get; set; }
 
-        [Column("telefone")]
-        public override string PhoneNumber { get; set; }
+        public string Telefone { get; set; }
 
-        [Column("endereco")]
         public virtual string Endereco { get; set; }
 
-        [Column("data_nascimento")]
         public DateTime DataNascimento { get; set; }
     }
 }

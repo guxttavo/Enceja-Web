@@ -11,16 +11,16 @@ namespace Enceja.Domain.Entities
     public class Nota
     {
         [Column("id")]
-        public Guid Id { get; set; }
+        public int Id { get; set; }
 
         [Column("id_aluno")]
-        public Guid IdAluno { get; set; }
+        public int IdAluno { get; set; }
 
         [Column("id_disciplina")]
-        public Guid IdDisciplina { get; set; }
+        public int IdDisciplina { get; set; }
 
         [Column("id_professor")]
-        public Guid IdProfessor { get; set; }
+        public int IdProfessor { get; set; }
 
         [Column("valor_nota")]
         public int ValorNota { get; set; }

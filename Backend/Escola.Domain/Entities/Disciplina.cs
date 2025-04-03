@@ -9,7 +9,7 @@ namespace Enceja.Domain.Entities
     public class Disciplina
     {
         [Column("id")]
-        public Guid Id { get; set; }
+        public int Id { get; set; }
 
         [Column("nome")]
         public string Nome { get; set; }

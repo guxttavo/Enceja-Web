@@ -9,7 +9,7 @@ namespace Enceja.Domain.Entities
     public class Aluno : Usuario
     {
         [Column("id_turma")]
-        public Guid IdTurma { get; set; }
+        public int IdTurma { get; set; }
 
         [Column("matricula")]
         public int Matricula { get; set; }

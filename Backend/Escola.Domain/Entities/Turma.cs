@@ -8,7 +8,7 @@ namespace Enceja.Domain.Entities
     public class Turma
     {
         [Column("id")]
-        public Guid Id { get; set; }
+        public int Id { get; set; }
 
         [Column("nome")]
         public string Nome { get; set; }
